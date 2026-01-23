@@ -23,8 +23,19 @@
     }
 
     private static int CountDuplicates(int[] data)
+{
+    HashSet<int> seen = new HashSet<int>();
+    int duplicates = 0;
+
+    foreach (int value in data)
     {
-        // Add code here.
-        return 0;
+        // HashSet.Add returns false if the value already exists
+        if (!seen.Add(value))
+        {
+            duplicates++;
+        }
     }
+
+    return duplicates;
+}
 }
